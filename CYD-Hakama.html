@@ -10,6 +10,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
     
     <style>
+        header.header-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 20px;
+            text-align: left;
+            margin-bottom: 35px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .logo-wrapper {
+            flex-shrink: 0;
+        }
+
+        .rose-logo {
+            width: 75px;
+            height: auto;
+            border-radius: 6px;
+            object-fit: contain;
+            border: 1px solid var(--border-color);
+            padding: 4px;
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .header-text {
+            flex-grow: 1;
+        }
+
+        @media (max-width: 640px) {
+            header.header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .rose-logo {
+                width: 65px;
+            }
+        }
+        
         :root {
             --primary-indigo: #1b2a47;
             --accent-red: #b83227;
@@ -216,8 +256,11 @@
 </head>
 <body>
 
-<div class="container">
-    <header>
+    <header class="header-container">
+        <div class="logo-wrapper">
+            <img src="rose.jpg" alt="Rose Kanji Stamp" class="rose-logo">
+        </div>
+        <div class="header-text">
         <h1>Erschaffe Dein Traumhakama</h1>
         <p class="subtitle">Create your Dream Hakama — Go Train & Blossom</p>
         <p class="credits">バラ (bara) design by Pari Karli | Powered by Pantopia</p>
