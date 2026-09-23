@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Dream Hakama - Calculator & Form</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c0392b;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 5px;
+            font-size: 1.8rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 25px;
+        }
+
+        fieldset {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            font-weight: bold;
+            color: var(--primary-color);
+            padding: 0 10px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        @media (max-width: 600px) {
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+
+        .results-box {
+            background-color: #f1f5f9;
+            border-left: 4px solid var(--accent-color);
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 25px;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .result-item {
+            background: #fff;
+            padding: 10px 15px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        .result-item strong {
+            display: block;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
+
+        .result-item span {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        button {
+            width: 100%;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background-color: #1a252f;
+        }
+
+        .toggle-btn {
+            background: none;
+            color: #0066cc;
+            border: none;
+            padding: 0;
+            font-size: 0.9rem;
+            cursor: pointer;
+            text-decoration: underline;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Erschaffe Dein Traumhakama</h1>
+    <p class="subtitle">Create your Dream Hakama — GO TRAIN AND BLOSSOM<br><small>Design by Pari Karli | Powered by Pantopia</small></p>
+
+    <form id="hakamaForm">
+        <!-- Στοιχεία Επικοινωνίας -->
+        <fieldset>
+            <legend>1. Στοιχεία Μαθητή / Παραγγελίας</legend>
+            <div class="grid-2">
+                <div class="form-group">
+                    <label for="firstName">Όνομα / First Name *</label>
+                    <input type="text" id="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Επώνυμο / Last Name *</label>
+                    <input type="text" id="lastName" required>
+                </div>
+            </div>
+            <div class="grid-2">
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Τηλέφωνο (WhatsApp / Viber) *</label>
+                    <input type="tel" id="phone" required>
+                </div>
+            </div>
+            <div class="grid-2">
+                <div class="form-group">
+                    <label for="color">Χρώμα Hakama *</label>
+                    <select id="color">
+                        <option value="Navy Blue">Σκούρο Μπλε / Dunkelblau</option>
+                        <option value="Black">Μαύρο / Schwarz</option>
+                        <option value="White">Λευκό / Weiß</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="model">Μοντέλο / Δέσιμο</label>
+                    <select id="model">
+                        <option value="Hips">Γοφοί (Hips / Hüfte) - Συνήθως Άνδρες</option>
+                        <option value="Waist">Μέση (Waist / Taille) - Συνήθως Γυναίκες</option>
+                    </select>
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- Βασικές Μετρήσεις -->
+        <fieldset>
+            <legend>2. Βασικές Μετρήσεις (σε cm)</legend>
+            <div class="grid-2">
+                <div class="form-group">
+                    <label for="hipsCircumference">Περιφέρεια Γοφών/Μέσης (Hips) [cm] *</label>
+                    <input type="number" id="hipsCircumference" placeholder="π.χ. 104" required oninput="calculatePattern()">
+                    <small style="color:#777">Εκεί που δένεται το Obi πάνω στο οποίο μπαίνει το χακάμα.</small>
+                </div>
+                <div class="form-group">
+                    <label for="lengthC">Μήκος (Length C) [cm] *</label>
+                    <input type="number" id="lengthC" placeholder="π.χ. 95" required oninput="calculatePattern()">
+                    <small style="color:#777">Από το Obi μέχρι κάτω από τον αστράγαλο.</small>
+                </div>
+            </div>
+
+            <button type="button" class="toggle-btn" onclick="toggleAdvanced()">+ Εμφάνιση προηγμένων παραμέτρων (Για όσους γνωρίζουν)</button>
+
+            <!-- Προηγμένες Παράμετροι -->
+            <div id="advancedSection" style="display: none; margin-top: 15px;">
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label for="widthA">A: Πλάτος Vorderseite oben [cm]</label>
+                        <input type="number" id="widthA" placeholder="Αυτόματο (π.χ. 32-34)" oninput="calculatePattern()">
+                    </div>
+                    <div class="form-group">
+                        <label for="heightD">D: Ύψος Koshi-ita [cm]</label>
+                        <input type="number" id="heightD" value="10" oninput="calculatePattern()">
+                    </div>
+                </div>
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label for="widthK">K: Πλάτος Koshi-ita [cm]</label>
+                        <input type="number" id="widthK" value="27" oninput="calculatePattern()">
+                    </div>
+                    <div class="form-group">
+                        <label for="widthG">G: Πλάτος Ιμάντων (Bänder) [cm]</label>
+                        <input type="number" id="widthG" value="4" oninput="calculatePattern()">
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- Αποτελέσματα Υπολογισμού Πατρόν -->
+        <div class="results-box">
+            <h3>Υπολογισμός Πατρόν για την Παρασκευή (Open Rose)</h3>
+            <p style="margin: 0; font-size: 0.9rem; color: #555;">Οι τιμές υπολογίζονται αυτόματα βάσει των τύπων του σχεδίου Blossom:</p>
+            
+            <div class="results-grid">
+                <div class="result-item">
+                    <strong>B (Umfang Hüfte / 2):</strong>
+                    <span id="resB">-</span> cm
+                </div>
+                <div class="result-item">
+                    <strong>A (Πλάτος Επάνω):</strong>
+                    <span id="resA">-</span> cm
+                </div>
+                <div class="result-item">
+                    <strong>C (Μήκος):</strong>
+                    <span id="resC">-</span> cm
+                </div>
+                <div class="result-item">
+                    <strong>E (Ύψος Ανοίγματος):</strong>
+                    <span id="resE">-</span> cm
+                </div>
+                <div class="result-item">
+                    <strong>F [ ~(C + G) × 2 ]:</strong>
+                    <span id="resF">-</span> cm
+                </div>
+                <div class="result-item">
+                    <strong>R [ ~(3 × K) ]:</strong>
+                    <span id="resR">-</span> cm
+                </div>
+            </div>
+        </div>
+
+        <button type="submit">Υποβολή Παραγγελίας</button>
+    </form>
+</div>
+
+<script>
+    function toggleAdvanced() {
+        const adv = document.getElementById('advancedSection');
+        adv.style.display = adv.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function calculatePattern() {
+        const hips = parseFloat(document.getElementById('hipsCircumference').value) || 0;
+        const C = parseFloat(document.getElementById('lengthC').value) || 0;
+
+        if (hips === 0 || C === 0) {
+            document.getElementById('resB').innerText = '-';
+            document.getElementById('resA').innerText = '-';
+            document.getElementById('resC').innerText = '-';
+            document.getElementById('resE').innerText = '-';
+            document.getElementById('resF').innerText = '-';
+            document.getElementById('resR').innerText = '-';
+            return;
+        }
+
+        // 1. Υπολογισμός B (Μισή περιφέρεια)
+        const B = hips / 2;
+
+        // 2. Υπολογισμός A (Πλάτος εμπρός - default βάσει B αν δεν έχει οριστεί)
+        let customA = parseFloat(document.getElementById('widthA').value);
+        const A = customA ? customA : Math.round(B * 0.62); // Προσεγγιστική αναλογία μεγέθους
+
+        // 3. Προεπιλεγμένες σταθερές D, K, G
+        const K = parseFloat(document.getElementById('widthK').value) || 27;
+        const G = parseFloat(document.getElementById('widthG').value) || 4;
+
+        // 4. Υπολογισμός E (Ύψος πλευρικού ανοίγματος)
+        const E = Math.round(C * 0.25) + 10; 
+
+        // 5. Υπολογισμός Ιμάντων F και R (Τύποι Παρασκευής)
+        // F = ~(C + G) * 2
+        const F = Math.round((C + G) * 2);
+        
+        // R = ~(3 * K)
+        const R = Math.round(3 * K);
+
+        // Ενημέρωση UI
+        document.getElementById('resB').innerText = B.toFixed(1);
+        document.getElementById('resA').innerText = A;
+        document.getElementById('resC').innerText = C;
+        document.getElementById('resE').innerText = E;
+        document.getElementById('resF').innerText = F;
+        document.getElementById('resR').innerText = R;
+    }
+
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzcbx3TQpk8b-HIDlxjFFVpEIRshg0taYRCzOBHp2IvdSxms8MQE2eBVnE_sEX4f4o/exec";
+
+document.getElementById('hakamaForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const submitBtn = e.target.querySelector('button[type="submit"]');
+    submitBtn.innerText = "Αποστολή...";
+    submitBtn.disabled = true;
+
+    const formData = {
+        firstName: document.getElementById('firstName').value,
+        lastName: document.getElementById('lastName').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        color: document.getElementById('color').value,
+        hips: document.getElementById('hipsCircumference').value,
+        lengthC: document.getElementById('lengthC').value,
+        resB: document.getElementById('resB').innerText,
+        resA: document.getElementById('resA').innerText,
+        resE: document.getElementById('resE').innerText,
+        resF: document.getElementById('resF').innerText,
+        resR: document.getElementById('resR').innerText
+    };
+
+    fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+    })
+    .then(() => {
+        alert('Η παραγγελία υποβλήθηκε επιτυχώς! Τα μέτρα στάλθηκαν στην Παρασκευή.');
+        document.getElementById('hakamaForm').reset();
+        submitBtn.innerText = "Υποβολή Παραγγελίας";
+        submitBtn.disabled = false;
+    })
+    .catch(error => {
+        console.error('Error!', error.message);
+        alert('Υπήρξε σφάλμα κατά την αποστολή. Παρακαλώ δοκιμάστε ξανά.');
+        submitBtn.innerText = "Υποβολή Παραγγελίας";
+        submitBtn.disabled = false;
+    });
+});
+</script>
+
+</body>
+</html>
