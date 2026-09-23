@@ -267,10 +267,10 @@
         <p class="subtitle">Go Train & Blossom</p>
         <p class="credits">バラ (bara) design by Pari Karli | Powered by Pantopia</p>
     </header>
-
-    <form id="hakamaForm">
-        <!-- 1. Στοιχεία Μαθητή -->
-        <fieldset>
+    <div class="container">
+        <form id="hakamaForm">
+            <!-- 1. Στοιχεία Μαθητή -->
+          <fieldset>
             <legend>1. Στοιχεία Παραγγελίας</legend>
             <div class="grid-2">
                 <div class="form-group">
@@ -309,10 +309,10 @@
                     </select>
                 </div>
             </div>
-        </fieldset>
+          </fieldset>
 
         <!-- 2. Βασικές Μετρήσεις -->
-        <fieldset>
+          <fieldset>
             <legend>2. Μετρήσεις (σε cm)</legend>
             <div class="grid-2">
                 <div class="form-group">
@@ -352,7 +352,7 @@
                     </div>
                 </div>
             </div>
-        </fieldset>
+          </fieldset>
 
         <!-- 3. Αποτελέσματα Υπολογισμού -->
         <div class="results-box">
@@ -387,8 +387,9 @@
             </div>
         </div>
 
-        <button type="submit" id="submitBtn">Υποβολή Παραγγελίας</button>
-    </form>
+            <button type="submit" id="submitBtn">Υποβολή Παραγγελίας</button>
+         </form>
+    </div>
 </div>
 
 <script>
