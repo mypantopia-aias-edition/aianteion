@@ -308,9 +308,9 @@
                 <div class="form-group">
                     <label for="color"  data-i18n="color">Χρώμα Hakama *</label>
                     <select id="color">
-                        <option value="Navy Blue">Σκούρο Μπλε</option>
-                        <option value="Black">Μαύρο</option>
-                        <option value="White">Λευκό</option>
+                        <option value="Navy Blue" data-i18n="opt_navy">Σκούρο Μπλε</option>
+                        <option value="Black" data-i18n="opt_black">Μαύρο</option>
+                        <option value="White" data-i18n="opt_white">Λευκό</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -329,12 +329,12 @@
             <div class="grid-2">
                 <div class="form-group">
                     <label for="hipsCircumference" data-i18n="hipsCircumference">Περιφέρεια Γοφών/Μέσης (H) [cm] *</label>
-                    <input type="number" id="hipsCircumference" placeholder="π.χ. 104" required oninput="calculatePattern()">
+                    <input type="number" id="hipsCircumference" data-i18n-ph="ph_hipsCircumference" placeholder="π.χ. 104" required oninput="calculatePattern()">
                     <span class="hint">Εκεί που δένεται το Obi πάνω στο οποίο μπαίνει το χακάμα.</span>
                 </div>
                 <div class="form-group">
                     <label for="lengthC"data-i18n="lengthC">Μήκος (Length C) [cm] *</label>
-                    <input type="number" id="lengthC" placeholder="π.χ. 95" required oninput="calculatePattern()">
+                    <input type="number" id="lengthC" data-i18n-ph="ph_lengthC" placeholder="π.χ. 95" required oninput="calculatePattern()">
                     <span class="hint">Από το Obi μέχρι κάτω από τον αστράγαλο.</span>
                 </div>
             </div>
@@ -346,7 +346,7 @@
                 <div class="grid-2">
                     <div class="form-group">
                         <label for="widthA" data-i18n="widthA">A: Πλάτος Vorderseite oben [cm]</label>
-                        <input type="number" id="widthA" placeholder="Αυτόματο" oninput="calculatePattern()">
+                        <input type="number" id="widthA" data-i18n-ph="ph_widthA" placeholder="Αυτόματο" oninput="calculatePattern()">
                     </div>
                     <div class="form-group">
                         <label for="heightD" data-i18n="heightD">D: Ύψος Koshi-ita [cm]</label>
@@ -441,9 +441,13 @@
             credits: "バラ (bara) design by Pari Karli | empowered by Pantopia",
             sec1_title: "1. Order Details",
             label_first_name: "First Name *",
+            ph_first_name: "ie. John",
             label_last_name: "Last Name *",
+            ph_last_name: "ie. Smith",
             label_email: "Email *",
+            ph_email: "abc@defg.lm",
             label_phone: "Phone (WhatsApp / Viber) *",
+            ph_phone: "+01 800000000",
             label_color: "Hakama Colour *",
             opt_navy: "Dark Blue",
             opt_black: "Black",
