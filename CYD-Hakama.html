@@ -286,38 +286,38 @@
             <legend>1. Στοιχεία Παραγγελίας</legend>
             <div class="grid-2">
                 <div class="form-group">
-                    <label data-i18n="firstName">Όνομα *</label>
-                    <input type="text" id="firstName" placeholder="π.χ. Pari" required>
+                    <label for="firstName" data-i18n="label_first_name">Όνομα *</label>
+                    <input type="text" id="firstName" data-i18n-ph="ph_first_name" placeholder="π.χ. Pari" required>
                 </div>
                 <div class="form-group">
-                    <label data-i18n="lastName">Επώνυμο *</label>
-                    <input type="text" id="lastName" placeholder="π.χ. Karli" required>
-                </div>
-            </div>
-            <div class="grid-2">
-                <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" placeholder="name@example.com" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Τηλέφωνο (WhatsApp / Viber) *</label>
-                    <input type="tel" id="phone" placeholder="+30 6900000000" required>
+                    <label for="lastName"  data-i18n="lastName">Επώνυμο *</label>
+                    <input type="text" id="lastName" data-i18n-ph="ph_last_name" placeholder="π.χ. Karli" required>
                 </div>
             </div>
             <div class="grid-2">
                 <div class="form-group">
-                    <label for="color">Χρώμα Hakama *</label>
+                    <label for="email"  data-i18n="email">Email *</label>
+                    <input type="email" id="email" data-i18n-ph="ph_email" placeholder="name@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone"  data-i18n="phone">Τηλέφωνο (WhatsApp / Viber) *</label>
+                    <input type="tel" id="phone" data-i18n-ph="ph_phone" placeholder="+30 6900000000" required>
+                </div>
+            </div>
+            <div class="grid-2">
+                <div class="form-group">
+                    <label for="color"  data-i18n="color">Χρώμα Hakama *</label>
                     <select id="color">
-                        <option value="Navy Blue">Σκούρο Μπλε / Dunkelblau</option>
-                        <option value="Black">Μαύρο / Schwarz</option>
-                        <option value="White">Λευκό / Weiß</option>
+                        <option value="Navy Blue">Σκούρο Μπλε</option>
+                        <option value="Black">Μαύρο</option>
+                        <option value="White">Λευκό</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="model">Σημείο Δεσίματος</label>
+                    <label for="model"  data-i18n="model">Σημείο Δεσίματος</label>
                     <select id="model">
-                        <option value="Hips">Γοφοί (Hips / Hüfte) — Συνήθως Άνδρες</option>
-                        <option value="Waist">Μέση (Waist / Taille) — Συνήθως Γυναίκες</option>
+                        <option value="Hips">Γοφοί — Συνήθως Άνδρες</option>
+                        <option value="Waist">Μέση — Συνήθως Γυναίκες</option>
                     </select>
                 </div>
             </div>
@@ -328,12 +328,12 @@
             <legend>2. Μετρήσεις (σε cm)</legend>
             <div class="grid-2">
                 <div class="form-group">
-                    <label for="hipsCircumference">Περιφέρεια Γοφών/Μέσης (H) [cm] *</label>
+                    <label for="hipsCircumference" data-i18n="hipsCircumference">Περιφέρεια Γοφών/Μέσης (H) [cm] *</label>
                     <input type="number" id="hipsCircumference" placeholder="π.χ. 104" required oninput="calculatePattern()">
                     <span class="hint">Εκεί που δένεται το Obi πάνω στο οποίο μπαίνει το χακάμα.</span>
                 </div>
                 <div class="form-group">
-                    <label for="lengthC">Μήκος (Length C) [cm] *</label>
+                    <label for="lengthC"data-i18n="lengthC">Μήκος (Length C) [cm] *</label>
                     <input type="number" id="lengthC" placeholder="π.χ. 95" required oninput="calculatePattern()">
                     <span class="hint">Από το Obi μέχρι κάτω από τον αστράγαλο.</span>
                 </div>
@@ -345,21 +345,21 @@
             <div id="advancedSection" style="display: none; margin-top: 20px;">
                 <div class="grid-2">
                     <div class="form-group">
-                        <label for="widthA">A: Πλάτος Vorderseite oben [cm]</label>
+                        <label for="widthA" data-i18n="widthA">A: Πλάτος Vorderseite oben [cm]</label>
                         <input type="number" id="widthA" placeholder="Αυτόματο" oninput="calculatePattern()">
                     </div>
                     <div class="form-group">
-                        <label for="heightD">D: Ύψος Koshi-ita [cm]</label>
+                        <label for="heightD" data-i18n="heightD">D: Ύψος Koshi-ita [cm]</label>
                         <input type="number" id="heightD" value="10" oninput="calculatePattern()">
                     </div>
                 </div>
                 <div class="grid-2">
                     <div class="form-group">
-                        <label for="widthK">K: Πλάτος Koshi-ita [cm]</label>
+                        <label for="widthK" data-i18n="widthK">K: Πλάτος Koshi-ita [cm]</label>
                         <input type="number" id="widthK" value="27" oninput="calculatePattern()">
                     </div>
                     <div class="form-group">
-                        <label for="widthG">G: Πλάτος Ιμάντων [cm]</label>
+                        <label for="widthG" data-i18n="widthG">G: Πλάτος Ιμάντων [cm]</label>
                         <input type="number" id="widthG" value="4" oninput="calculatePattern()">
                     </div>
                 </div>
@@ -368,7 +368,7 @@
 
         <!-- 3. Αποτελέσματα Υπολογισμού -->
         <div class="results-box">
-            <h3>Υπολογισμός Πατρόν (Open Rose / バラ (bara) Design)</h3>
+            <h3>Υπολογισμός Πατρόν (Open Rose / バラ (bara) design)</h3>
             <span class="hint">Αυτόματος υπολογισμός μέτρων για την σχεδιάστρια:</span>
             
             <div class="results-grid">
@@ -414,9 +414,13 @@
             credits: "バラ (bara) design by Pari Karli | empowered by Pantopia",
             sec1_title: "1. Στοιχεία Παραγγελίας",
             label_first_name: "Όνομα *",
+            ph_first_name: "πχ. Παρή",
             label_last_name: "Επώνυμο *",
+            ph_last_name: "πχ. Καρλή",
             label_email: "Email *",
+            ph_email: "pk@abc.gr",
             label_phone: "Τηλέφωνο (WhatsApp / Viber) *",
+            ph_phone: "+30 6901012345"
             label_color: "Χρώμα Hakama *",
             opt_navy: "Σκούρο Μπλε",
             opt_black: "Μαύρο",
@@ -480,20 +484,26 @@
     };
 
     function setLanguage(lang) {
+        // 1. Ενημέρωση κειμένων (Labels, Legends, Buttons)
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.getAttribute('data-i18n');
             if (translations[lang] && translations[lang][key]) {
-                if (el.tagName === 'INPUT' && el.type === 'placeholder') {
-                    el.placeholder = translations[lang][key];
-                } else {
-                    el.innerText = translations[lang][key];
-                }
+                el.innerText = translations[lang][key];
             }
         });
 
-        // Ενημέρωση ενεργού κουμπιού
+        // 2. Ενημέρωση Placeholders (π.χ. παραδείγματα στα inputs)
+        document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+            const key = el.getAttribute('data-i18n-ph');
+            if (translations[lang] && translations[lang][key]) {
+                el.placeholder = translations[lang][key];
+            }
+        });
+
+        // 3. Ενημέρωση ενεργού κουμπιού γλωσσών
         document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-        document.getElementById(`btn-${lang}`).classList.add('active');
+        const activeBtn = document.getElementById(`btn-${lang}`);
+        if (activeBtn) activeBtn.classList.add('active');
     }
 
 // Αυτόματη ανίχνευση γλώσσας χρήστη κατά την είσοδο
